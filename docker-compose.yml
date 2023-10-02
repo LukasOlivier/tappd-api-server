@@ -1,0 +1,81 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: sammy
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: tab
+    container_name: tab-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - tab
+
+  db:
+    image: mysql:8.0
+    container_name: tab-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - tab
+    ports:
+      - "3306:3306"
+
+  apache:
+    image: httpd:alpine
+    container_name: tab-website
+    restart: unless-stopped
+    ports:
+      - 80:80  
+    volumes:
+      - ./client:/usr/local/apache2/htdocs
+    networks:
+      - tab
+
+  nginx:
+      image: nginx:alpine
+      container_name: tab-nginx
+      restart: unless-stopped
+      ports:
+          - 8393:80
+      volumes:
+          - ./:/var/www
+          - ./docker-compose/nginx:/etc/nginx/conf.d/
+      networks:
+          - tab
+
+  mysql-backup:
+      container_name: mysql-backup
+      user: "0" 
+      environment:
+          - DB_SERVER=db
+          - DB_PORT=3306
+          - DB_DATABASE=tab
+          - DB_USER=root
+          - DB_PASS=tab_password
+          - DB_DUMP_FREQ=60
+          - DB_DUMP_TARGET=/db
+          - DB_NAMES=tab
+          - SINGLE_DATABASE=true
+      image: databack/mysql-backup
+      volumes:
+          - './backups:/db'
+      networks:
+          - tab
+
+networks:
+  tab:
+    driver: bridge

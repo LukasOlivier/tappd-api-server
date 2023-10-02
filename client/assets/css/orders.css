@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Staatliches&family=Lato:wght@700&display=swap');
+
+body {
+    background: #F2F2F2;
+}
+
+h1, h2 {
+    font-family: 'Staatliches', cursive;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+}
+.title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+#show-all-container{
+    margin-left: 1rem;
+}
+
+
+
+.title-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 1rem 0 1rem;
+}
+
+.remark{
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+#data {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+.title-line {
+    flex-grow: 1;
+    border-bottom: black solid 1px;
+    transform: translateY(-50%);
+}
+
+h3{
+    font-size: 1.5rem;
+    font-family: 'Staatliches', cursive;
+}
+
+label{
+    font-family: 'Staatliches', cursive;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+.hidden{
+    display: none !important;
+}
+
+#orders-section .new{
+    background: #0094FF;
+}
+
+#orders-section button{
+    color: white;
+    border: none;
+    font-family: 'Staatliches', cursive;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 8rem;
+    height: 2rem;
+    background: #EA721C;
+}
+
+#orders .complete{
+    background: #42ea1c;
+}
+
+.item-description{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: baseline;
+}
+
+.order-container{
+    padding: 1rem;
+}
+
+.item-container:last-of-type{
+    border-bottom: black solid 1px;
+}
+
+.order-container:nth-child(2n){
+    background: #E9E9E9;
+}
+
+.order-total{
+    font-family: 'Staatliches', cursive;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    width: 100%;
+    text-align: right;
+}
+
+.item-quantity{
+    font-family: 'Staatliches', cursive;
+}
+
+#no-orders{
+    width: 100%;
+    text-align: center;
+}
+#demo-login{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 1rem;
+}
+#login-section{
+    width: 100%;
+    height: 70vh;
+}
+
+#login-section form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-top: 10rem;
+    border-radius: 5px;
+}
+
+#login-section form input, #error{
+    width: 50%;
+    max-width: 20rem;
+    height: 5%;
+    padding: 0.5rem;
+    display: inline-block;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+#error{
+    color: red;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+#login-section input[type=submit]{
+    color: white;
+    background: #1CA0EA;
+    border: none;
+    font-family: 'Staatliches', cursive !important;
+}
+
+
+
+.slide-up {
+    animation: slideUp 0.2s ease forwards;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.title-text{
+    border: none;
+    background: none;
+    text-align: center;
+}
+
+option{
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+}
+
+#inventory{
+    margin: 2rem;
+}
+
+.item-container:not(:last-of-type){
+    border-bottom: rgba(162, 162, 162, 0.43) solid 1px;
+}
+
+.item-container:hover{
+    background: #E9E9E9;
+    cursor: pointer;
+}
+
+dialog form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+dialog{
+    width: 75%;
+    max-width: 20rem;
+    border: none;
+    text-align: center;
+    overflow: hidden;
+    padding: 1rem 2rem;
+}
+
+dialog h1{
+    display: inline;
+}
+
+#chart-container{
+    width: 80%;
+    max-width: 60rem;
+}
+
+#chart-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.close-dialog{
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+    font-size: 1rem;
+    color: black;
+    text-decoration: none;
+    border: none;
+    background: none;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.input-container input, .input-container select{
+    padding: 0.5rem;
+    background: white;
+    border: solid 1px black;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.top-sold{
+    width: 80%;
+    padding: 2rem;
+}
+
+#top-sold-items li{
+    padding: 0.5rem 0;
+}
+
+.save{
+    background: #1CA0EA;
+    color: white;
+    border: none;
+    font-family: 'Staatliches', cursive;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.add-button{
+    background: #1CA0EA;
+    color: white;
+    border: none;
+    font-family: 'Staatliches', cursive;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 8rem;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    height: 2rem;
+}
+
+
+.delete{
+    background: #FF0000;
+    color: white;
+    border: none;
+    font-family: 'Staatliches', cursive;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 90%;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    height: 2rem;
+}
+
+#categories, #tables{
+    margin: 3rem;
+}
+
+.category-item, .table-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0 1rem 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.category-item:hover, .table-item:hover{
+    background: #E9E9E9;
+    cursor: pointer;
+}
+
+.category-item:not(:last-of-type), .table-item:not(:last-of-type){
+    border-bottom: rgba(162, 162, 162, 0.43) solid 1px;
+}
+
+#loading {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#loading img{
+    width: 10rem;
+}
+
+#loading p{
+    font-family: 'Lato', cursive;
+    font-size: min(3vw, 1rem);
+    width: fit-content;
+}
