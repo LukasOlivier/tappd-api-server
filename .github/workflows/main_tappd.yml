@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'Tappd'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_73D9D5D51CAB4657B2A0974D852DC0C0 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C943F5F513824462BE5A4BA9BD0B689C }}
           package: .
